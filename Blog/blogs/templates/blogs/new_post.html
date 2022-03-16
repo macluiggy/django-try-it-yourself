@@ -1,0 +1,7 @@
+<p>Add a new topic:</p>
+
+<form action="{% url 'blogs:new_post' %}" method="post">
+  {% csrf_token %} <!-- cross-site request forgery (CSRF) protection -->
+  {{ form.as_p }} <!-- renderiza el formulario -->
+  <button type="submit">Add new post</button>
+</form>

@@ -1,0 +1,12 @@
+{% extends "blogs/base.html" %} {% block content %} {% if form.errors %}
+<p>Your username or password didn't match. Please try again.</p>
+{% endif %}
+<form action="{% url 'users:login' %}" method="post">
+  {% csrf_token %} {{form.as_p}}
+
+  <button type="submit">Log in</button>
+  <input type="hidden" name="next" value="{% url 'blogs:index' %}" />
+  <!-- value le dice a django a donde redireccionar despues de hacer el login -->
+</form>
+
+{% endblock content %}

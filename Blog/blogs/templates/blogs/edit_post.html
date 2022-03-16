@@ -1,0 +1,7 @@
+<p>Edit a post:</p>
+
+<form action="{% url 'blogs:edit_post' post.id%}" method="post">
+  {% csrf_token %} <!-- cross-site request forgery (CSRF) protection -->
+  {{ form.as_p }} <!-- renderiza el formulario -->
+  <button type="submit">Save changes</button>
+</form>
