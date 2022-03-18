@@ -5,6 +5,7 @@
   <!-- el namespace proviene de la variable app_name que se definio en urls.py e index es tambien se definio ahi en el metodo path en el tercer argumento -->
   {% if user.is_authenticated %}
   Hello, {{ user.username }}
+  <a href="{% url 'blogs:blogs' %}">Blogs</a>
   <a href="{% url 'users:logout' %}">Logout</a>
   {% else %}
   <a href="{% url 'users:register' %}">Register</a>
